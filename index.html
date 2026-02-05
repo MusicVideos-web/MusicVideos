@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Menú lateral</title>
+  <title>Barra lateral horizontal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -18,23 +18,20 @@
       background: #121212;
       color: #fff;
       display: flex;
-    }
-
-    /* MENÚ LATERAL */
-    .sidebar {
-      width: 90px;
-      background: #1f1f1f;
-      display: flex;
-      flex-direction: column;
       align-items: center;
-      padding-top: 20px;
-      gap: 20px;
-      box-shadow: 2px 0 10px rgba(0,0,0,0.5);
     }
 
-    .sidebar a {
-      width: 60px;
-      height: 60px;
+    /* BARRA */
+    .barra {
+      display: flex;
+      flex-direction: row; /* EN FILA */
+      gap: 15px;
+      margin-left: 20px; /* pegada al lado izquierdo */
+    }
+
+    .barra a {
+      width: 70px;
+      height: 70px;
       background: #00c6ff;
       color: #000;
       text-decoration: none;
@@ -42,45 +39,25 @@
       align-items: center;
       justify-content: center;
       border-radius: 12px;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       font-weight: bold;
       transition: 0.2s;
     }
 
-    .sidebar a:hover {
+    .barra a:hover {
       transform: scale(1.1);
       background: #00a6d6;
-    }
-
-    /* CONTENIDO */
-    .contenido {
-      flex: 1;
-      padding: 40px;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      opacity: 0.85;
     }
   </style>
 </head>
 
 <body>
 
-  <nav class="sidebar">
+  <nav class="barra">
     <a href="#">1</a>
     <a href="#">2</a>
     <a href="#">3</a>
   </nav>
-
-  <main class="contenido">
-    <h1>Menú lateral listo</h1>
-    <p>Aquí va el contenido de tu página.</p>
-  </main>
 
 </body>
 </html>
