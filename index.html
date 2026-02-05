@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi primera página</title>
+  <title>Mi página</title>
 
   <style>
     body {
@@ -22,54 +22,62 @@
       padding: 40px;
       border-radius: 15px;
       max-width: 400px;
+      width: 90%;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
     h1 {
       margin-bottom: 10px;
-      font-size: 2.2em;
     }
 
     p {
-      font-size: 1.1em;
       margin-bottom: 25px;
     }
 
-    button {
+    .botones {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .botones button {
+      width: 100%;
       background: #00e5ff;
       border: none;
-      padding: 12px 25px;
+      padding: 12px;
       font-size: 1em;
       border-radius: 25px;
       cursor: pointer;
       transition: 0.3s;
     }
 
-    button:hover {
+    .botones button:hover {
       background: #00bcd4;
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
   </style>
 </head>
 
 <body>
 
- <img src="logo.png" alt="Logo" style="width:120px; margin-bottom:20px;">
-    <h1> MusicVideos 🌍</h1>
-    <p>Mi página web ya está en internet gracias a GitHub Pages.</p>
-    <button onclick="alert('¡Funciona perfectamente! 🚀')">
-      Probar botón
-    </button>
+  <div class="card">
+    <h1>Jesús Ferrer</h1>
+    <p>Bienvenido a mi sitio oficial</p>
+
+    <div class="botones">
+      <button onclick="window.open('https://wa.me/57TU_NUMERO','_blank')">
+        WhatsApp 💬
+      </button>
+
+      <button onclick="window.open('https://instagram.com/TU_USUARIO','_blank')">
+        Instagram 📸
+      </button>
+
+      <button onclick="window.open('https://tiktok.com/@TU_USUARIO','_blank')">
+        TikTok 🎵
+      </button>
+    </div>
   </div>
 
 </body>
-<a href="https://wa.me/57TU_NUMERO" target="_blank">
-  <button>WhatsApp 💬</button>
-</a>
-<div class="botones">
-  <button onclick="window.open('https://youtube.com','_blank')">YouTube</button>
-  <button onclick="window.open('https://tiktok.com','_blank')">TikTok</button>
-  <button onclick="window.open('https://instagram.com','_blank')">Instagram</button>
-</div>
-
-
+</html>
