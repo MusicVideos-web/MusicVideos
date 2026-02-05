@@ -2,23 +2,65 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi página</title>
+  <title>Mi primera página</title>
 
   <style>
     body {
-      background: #f2f2f2;
+      margin: 0;
       font-family: Arial, sans-serif;
-    }
-    h1 {
-      color: #2c3e50;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       text-align: center;
     }
-  </style>
 
+    .card {
+      background: rgba(0,0,0,0.35);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 400px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.2em;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 25px;
+    }
+
+    button {
+      background: #00e5ff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00bcd4;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
+
 <body>
 
- <h1>HOLA MUNDO PRUEBA 123</h1>
+  <div class="card">
+    <h1>Hola, mundo 🌍</h1>
+    <p>Mi página web ya está en internet gracias a GitHub Pages.</p>
+    <button onclick="alert('¡Funciona perfectamente! 🚀')">
+      Probar botón
+    </button>
+  </div>
 
 </body>
 </html>
