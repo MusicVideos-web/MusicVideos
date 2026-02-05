@@ -3,70 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Música de Jesus - Venta de MP3</title>
-    <!-- Bootstrap CSS para un diseño espectacular y responsivo -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Font Awesome para iconos -->
+    <title>Jesus Música - Escucha, Compra y Apoya</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Estilos personalizados para hacerlo espectacular -->
     <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
+        body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; }
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://source.unsplash.com/random/1920x1080/?concert,stage') center/cover; 
+            height: 90vh; 
+            display: flex; align-items: center; justify-content: center; text-align: center; 
         }
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1920x1080/?music,concert') no-repeat center center/cover;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 4rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        .track-card {
-            background-color: #1e1e1e;
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        .track-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255,255,255,0.1);
-        }
-        .track-card audio {
-            width: 100%;
-        }
-        .btn-buy {
-            background-color: #1db954;
-            border: none;
-            color: #fff;
-        }
-        .btn-buy:hover {
-            background-color: #1aa34a;
-        }
-        footer {
-            background-color: #0a0a0a;
-            padding: 20px 0;
-        }
+        .hero h1 { font-size: 5rem; font-weight: bold; text-shadow: 3px 3px 10px #000; }
+        .player-section { background: #1a1a1a; padding: 60px 0; }
+        .spotify-embed { border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(30,215,96,0.3); }
+        .track-card { background: #1e1e1e; border-radius: 20px; transition: all 0.4s; }
+        .track-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(29,185,84,0.4); }
+        .btn-spotify { background: #1db954; border: none; }
+        .btn-spotify:hover { background: #1ed760; }
+        footer { background: #000; }
     </style>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow">
         <div class="container">
-            <a class="navbar-brand" href="#">Música de Jesus</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fw-bold" href="#">Jesus Música</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#player">Reproduce</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tracks">Canciones</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                 </ul>
@@ -74,137 +43,86 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Descubre la Música de Jesus</h1>
-            <p class="lead">Compra y descarga MP3 de alta calidad. ¡Escucha previews y compra ahora!</p>
-            <a href="#tracks" class="btn btn-lg btn-primary">Ver Canciones</a>
+            <h1>Jesus Música</h1>
+            <p class="lead fs-4 mt-3">Escucha, compra mis MP3 y apóyame en streams</p>
+            <a href="#player" class="btn btn-lg btn-success mt-4"><i class="fas fa-play me-2"></i>Reproduce Ahora</a>
         </div>
     </section>
 
-    <!-- Sección de Canciones -->
+    <!-- Sección Reproductor Principal - Monetizado vía Streams -->
+    <section id="player" class="player-section">
+        <div class="container text-center">
+            <h2 class="mb-5">Reproductor Principal</h2>
+            <p class="lead mb-4">Cada reproducción aquí cuenta para mis royalties en plataformas oficiales.<br>¡Apóyame escuchando completo! (mejor en Spotify/Tidal para mejor pago al artista)</p>
+            
+            <!-- Reemplaza este iframe con tu EMBED oficial de Spotify (ve a spotify.com → tu perfil → share → embed) -->
+            <div class="spotify-embed mx-auto" style="max-width: 700px;">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/TU_ARTIST_ID?utm_source=generator" width="100%" height="500" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <p class="mt-4 text-muted">No tienes Spotify? <a href="https://open.spotify.com/artist/TU_ARTIST_ID" class="text-success" target="_blank">Escúchame aquí</a> o usa el reproductor de tracks abajo para previews.</p>
+        </div>
+    </section>
+
+    <!-- Tracks con Previews + Botones -->
     <section id="tracks" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Mis Canciones Disponibles</h2>
-            <div class="row">
-                <!-- Canción 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card track-card">
-                        <img src="https://source.unsplash.com/random/400x300/?music,song1" class="card-img-top" alt="Portada Canción 1">
+            <h2 class="text-center mb-5">Mis Canciones</h2>
+            <div class="row g-4">
+                <!-- Ejemplo Canción 1 -->
+                <div class="col-md-4">
+                    <div class="card track-card h-100 text-center">
+                        <img src="https://source.unsplash.com/random/400x400/?music,album1" class="card-img-top" alt="Portada">
                         <div class="card-body">
-                            <h5 class="card-title">Canción 1 - Título Ejemplo</h5>
-                            <p class="card-text">Descripción breve de la canción. Género: Pop. Duración: 3:45.</p>
-                            <audio controls>
-                                <source src="ruta/a/tu/preview-cancion1.mp3" type="audio/mpeg">
-                                Tu navegador no soporta audio.
+                            <h5>Canción Ejemplo 1</h5>
+                            <audio controls class="w-100 mt-2 mb-3">
+                                <source src="ruta/a/preview1.mp3" type="audio/mpeg">
                             </audio>
-                            <p class="mt-3">Precio: $1.99</p>
-                            <!-- Botón de PayPal - Reemplaza con tu propio botón generado en PayPal para bienes digitales -->
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="mt-2">
+                            <a href="https://open.spotify.com/track/ID_DEL_TRACK" class="btn btn-spotify w-100 mb-2" target="_blank"><i class="fab fa-spotify"></i> Escuchar Completo en Spotify</a>
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                 <input type="hidden" name="cmd" value="_xclick">
-                                <input type="hidden" name="business" value="tu.email@paypal.com"> <!-- Reemplaza con tu email de PayPal -->
-                                <input type="hidden" name="item_name" value="Canción 1 - MP3">
+                                <input type="hidden" name="business" value="tu.email@paypal.com">
+                                <input type="hidden" name="item_name" value="Canción Ejemplo 1 - MP3">
                                 <input type="hidden" name="amount" value="1.99">
                                 <input type="hidden" name="currency_code" value="USD">
-                                <input type="hidden" name="return" value="ruta/a/pagina-de-gracias-con-descarga"> <!-- Configura para entrega digital -->
-                                <button type="submit" class="btn btn-buy w-100"><i class="fas fa-shopping-cart"></i> Comprar Ahora</button>
+                                <button type="submit" class="btn btn-outline-light w-100"><i class="fas fa-download"></i> Comprar MP3 $1.99</button>
                             </form>
                         </div>
                     </div>
                 </div>
 
-                <!-- Canción 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card track-card">
-                        <img src="https://source.unsplash.com/random/400x300/?music,song2" class="card-img-top" alt="Portada Canción 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Canción 2 - Otro Título</h5>
-                            <p class="card-text">Descripción breve. Género: Rock. Duración: 4:20.</p>
-                            <audio controls>
-                                <source src="ruta/a/tu/preview-cancion2.mp3" type="audio/mpeg">
-                                Tu navegador no soporta audio.
-                            </audio>
-                            <p class="mt-3">Precio: $1.99</p>
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="mt-2">
-                                <input type="hidden" name="cmd" value="_xclick">
-                                <input type="hidden" name="business" value="tu.email@paypal.com">
-                                <input type="hidden" name="item_name" value="Canción 2 - MP3">
-                                <input type="hidden" name="amount" value="1.99">
-                                <input type="hidden" name="currency_code" value="USD">
-                                <input type="hidden" name="return" value="ruta/a/pagina-de-gracias-con-descarga">
-                                <button type="submit" class="btn btn-buy w-100"><i class="fas fa-shopping-cart"></i> Comprar Ahora</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <!-- Duplica para más canciones... -->
 
-                <!-- Añade más canciones según necesites -->
-                <!-- Canción 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card track-card">
-                        <img src="https://source.unsplash.com/random/400x300/?music,song3" class="card-img-top" alt="Portada Canción 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Canción 3 - Tercer Título</h5>
-                            <p class="card-text">Descripción breve. Género: Electrónica. Duración: 3:30.</p>
-                            <audio controls>
-                                <source src="ruta/a/tu/preview-cancion3.mp3" type="audio/mpeg">
-                                Tu navegador no soporta audio.
-                            </audio>
-                            <p class="mt-3">Precio: $1.99</p>
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="mt-2">
-                                <input type="hidden" name="cmd" value="_xclick">
-                                <input type="hidden" name="business" value="tu.email@paypal.com">
-                                <input type="hidden" name="item_name" value="Canción 3 - MP3">
-                                <input type="hidden" name="amount" value="1.99">
-                                <input type="hidden" name="currency_code" value="USD">
-                                <input type="hidden" name="return" value="ruta/a/pagina-de-gracias-con-descarga">
-                                <button type="submit" class="btn btn-buy w-100"><i class="fas fa-shopping-cart"></i> Comprar Ahora</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Contacto -->
-    <section id="contact" class="py-5 bg-dark">
+    <!-- Contacto (mismo que antes) -->
+    <section id="contact" class="py-5 bg-black">
         <div class="container">
             <h2 class="text-center mb-5">Contáctame</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="message" rows="5"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Enviar</button>
-                    </form>
-                </div>
-            </div>
+            <!-- Formulario básico -->
+            <form class="col-md-6 mx-auto">
+                <div class="mb-3"><input type="text" class="form-control" placeholder="Nombre"></div>
+                <div class="mb-3"><input type="email" class="form-control" placeholder="Email"></div>
+                <div class="mb-3"><textarea class="form-control" rows="5" placeholder="Mensaje"></textarea></div>
+                <button type="submit" class="btn btn-success w-100">Enviar</button>
+            </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="text-center">
-        <p>&copy; 2026 Música de Jesus. Todos los derechos reservados.</p>
-        <div>
-            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-spotify"></i></a>
+    <footer class="text-center py-4">
+        <p>© 2026 Jesus Música | Santa Marta, Colombia</p>
+        <div class="social-icons">
+            <a href="#" class="text-white mx-3 fs-4"><i class="fab fa-spotify"></i></a>
+            <a href="#" class="text-white mx-3 fs-4"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white mx-3 fs-4"><i class="fab fa-youtube"></i></a>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
