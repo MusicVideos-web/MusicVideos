@@ -2,10 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Barra lateral horizontal</title>
+  <title>Página completa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -17,33 +18,31 @@
       min-height: 100vh;
       background: #121212;
       color: #fff;
-      display: flex;
-      align-items: center;
-    }<div class="contenido">
-  <h1>Contenido principal</h1>
-  <p>Aquí ya aparece algo en el fondo.</p>
-</div>
+    }
 
-
-    /* BARRA */
+    /* MENÚ LATERAL */
     .barra {
+      position: fixed;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
-      flex-direction: row; /* EN COLUMNA */
+      flex-direction: column; /* EN COLUMNA (UNO DEBAJO DEL OTRO) */
       gap: 15px;
-      margin-left: 20px; /* pegada al lado izquierdo */
+      z-index: 1000;
     }
 
     .barra a {
-      width: 70px;
-      height: 70px;
+      width: 65px;
+      height: 65px;
       background: #00c6ff;
       color: #000;
       text-decoration: none;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 12px;
-      font-size: 1.6rem;
+      border-radius: 14px;
+      font-size: 1.5rem;
       font-weight: bold;
       transition: 0.2s;
     }
@@ -52,18 +51,67 @@
       transform: scale(1.1);
       background: #00a6d6;
     }
+
+    /* CONTENIDO PRINCIPAL */
+    .contenido {
+      margin-left: 120px; /* espacio para el menú */
+      padding: 40px;
+    }
+
+    .seccion {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .seccion h1 {
+      font-size: 3rem;
+      opacity: 0.9;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .barra {
+        flex-direction: row;
+        left: 50%;
+        top: auto;
+        bottom: 20px;
+        transform: translateX(-50%);
+      }
+
+      .contenido {
+        margin-left: 0;
+        padding-bottom: 120px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- MENÚ -->
   <nav class="barra">
-    <a href="#">1</a>
-    <a href="#">2</a>
-    <a href="#">3</a>
+    <a href="#uno">1</a>
+    <a href="#dos">2</a>
+    <a href="#tres">3</a>
   </nav>
+
+  <!-- CONTENIDO -->
+  <main class="contenido">
+    <section id="uno" class="seccion">
+      <h1>Sección 1</h1>
+    </section>
+
+    <section id="dos" class="seccion">
+      <h1>Sección 2</h1>
+    </section>
+
+    <section id="tres" class="seccion">
+      <h1>Sección 3</h1>
+    </section>
+  </main>
 
 </body>
 </html>
-
-
